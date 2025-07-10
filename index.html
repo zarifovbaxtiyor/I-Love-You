@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Neon Heart Animation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes pulse-glow {
+      0%, 100% {
+        filter: drop-shadow(0 0 10px rgba(255, 0, 128, 0.8))
+                drop-shadow(0 0 20px rgba(0, 255, 255, 0.8));
+      }
+      50% {
+        filter: drop-shadow(0 0 20px rgba(255, 0, 128, 1))
+                drop-shadow(0 0 30px rgba(0, 255, 255, 1));
+      }
+    }
+    .neon-heart {
+      animation: pulse-glow 2.5s infinite ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-black flex items-center justify-center min-h-screen">
+
+  <div class="relative w-[90vw] max-w-[500px] aspect-square">
+    <!-- SVG Neon Yurak -->
+    <svg viewBox="0 0 200 200" class="w-full h-full neon-heart">
+      <path d="M100 170 L30 90 
+               A30 30 0 1 1 100 60 
+               A30 30 0 1 1 170 90 Z"
+            fill="none"
+            stroke-width="10"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="url(#gradient)"
+      />
+      <defs>
+        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#ff00aa" />
+          <stop offset="100%" stop-color="#00ffff" />
+        </linearGradient>
+      </defs>
+    </svg>
+
+    <!-- I Love You Matni -->
+    <div class="absolute inset-0 flex items-center justify-center">
+      <p class="text-white text-2xl sm:text-3xl md:text-4xl font-semibold">I love You</p>
+    </div>
+  </div>
+
+</body>
+</html>
